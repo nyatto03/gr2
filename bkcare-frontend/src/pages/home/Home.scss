@@ -1,0 +1,193 @@
+.home-container {
+    .home-banner {
+        position: relative;
+        background: url("./banner.jpg") no-repeat center center/cover;
+        height: calc(
+            90vw * 9 / 16
+        ); /* Điều chỉnh chiều cao dựa trên chiều rộng viewport */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        animation: fadeIn 0.5s forwards;
+
+        .banner-content {
+            text-align: center;
+            animation: fadeIn 2s forwards;
+
+            .banner-title {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                font-weight: bold;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .search-input {
+                max-width: 600px;
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 1.1rem;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .search-results {
+        padding: 2rem 4rem;
+    }
+
+    .home-services,
+    .home-doctors {
+        padding: 2rem 4rem;
+
+        .service-description {
+            height: 236px;
+            overflow: hidden; /* Ẩn phần văn bản vượt quá */
+            text-overflow: ellipsis;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+
+    .slider-nav-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 20px;
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+
+    .doctor-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .ant-card-meta-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .ant-card-meta-description p {
+        color: #666;
+    }
+
+    .slick-slide {
+        padding: 15px;
+    }
+
+    .slick-track {
+        display: flex;
+        justify-content: space-between; /* Đảm bảo các mục được cách đều nhau */
+    }
+
+    .home-about {
+        background-color: #f9f9f9;
+        background: url("./about-bg.png") no-repeat center center/cover;
+    }
+
+    .home-about,
+    .home-contact {
+        padding: 4rem 6rem;
+        border-radius: 10px;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 2rem;
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+
+            p {
+                margin-bottom: 0.8rem;
+            }
+
+            strong {
+                font-weight: bold;
+                color: #333;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-about,
+    .home-contact {
+        padding: 2rem 3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-banner {
+        height: 60vw; /* Điều chỉnh chiều cao banner cho màn hình nhỏ hơn */
+    }
+
+    .search-input {
+        max-width: 300px;
+    }
+
+    .slick-dots {
+        display: block !important;
+    }
+}

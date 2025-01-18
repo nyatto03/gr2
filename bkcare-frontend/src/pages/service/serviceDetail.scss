@@ -1,0 +1,132 @@
+.service-detail-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 30px;
+      color: #333;
+    }
+  
+    .ant-card {
+      margin-bottom: 20px;
+    }
+  
+    .ant-card-meta-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #4c4c4c;
+    }
+  
+    .ant-card-meta-description {
+      font-size: 1rem;
+      color: #7d7d7d;
+    }
+  
+    .doctor-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+  
+      div {
+        flex: 1;
+  
+        h4 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #333;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #666;
+  
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+  
+    .ant-timeline {
+      margin-left: 30px;
+      margin-top: 20px;
+    }
+
+  
+    .ant-timeline-item-head {
+      background-color: #52c41a;
+    }
+  
+    .ant-btn {
+      background-color: #1890ff;
+      border-color: #1890ff;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+  
+      &:disabled {
+        background-color: #f0f0f0;
+        color: #bbb;
+        border-color: #ccc;
+      }
+  
+      &:hover {
+        background-color: #40a9ff;
+        border-color: #40a9ff;
+      }
+    }
+  
+    .ant-modal-body {
+      font-size: 1rem;
+      color: #333;
+    }
+  
+    .ant-modal-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+  
+    /* Loading spinner */
+    .ant-spin {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+  }
+  

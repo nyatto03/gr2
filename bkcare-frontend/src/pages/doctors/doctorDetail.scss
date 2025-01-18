@@ -1,0 +1,29 @@
+.doctor-detail-container {
+    animation: fadeIn 0.5s forwards;
+
+    padding: 2rem 4rem;
+}
+
+.doctor-detail-content {
+    display: flex;
+    flex-direction: row; /* Đặt ảnh và thông tin bác sĩ cạnh nhau */
+    gap: 20px; /* Khoảng cách giữa ảnh và thông tin */
+}
+
+.doctor-image {
+    flex-shrink: 0; /* Không cho ảnh co lại */
+    width: 250px; /* Kích thước cố định cho ảnh */
+    height: 300px; /* Chiều cao cố định cho ảnh */
+    overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài */
+    border-radius: 10px; /* Bo góc ảnh */
+    margin-top: 10px;
+}
+
+.doctor-info {
+    flex-grow: 1; /* Thông tin bác sĩ chiếm phần còn lại */
+    padding: 10px;
+}
+
+.ant-card {
+    border-radius: 10px;
+}

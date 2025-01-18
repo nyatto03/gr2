@@ -1,0 +1,138 @@
+// servicesList.scss
+
+.service-list {
+    animation: fadeIn 0.5s forwards;
+
+    padding: 2rem 4rem;
+
+    // Tiêu đề trang
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    // Mô tả trang
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    // Thanh tìm kiếm
+
+    .search-input {
+        margin-bottom: 60px;
+    }
+    .ant-input-search {
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 0 auto;
+
+        font-size: 1.1rem; /* Tăng kích thước font của thanh tìm kiếm */
+    }
+
+    .ant-input-search input {
+        //   padding: 10px 15px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
+
+    .ant-input-search button {
+        font-size: 1.2rem; /* Tăng kích thước chữ trên nút */
+        padding: 20px 24px; /* Tăng padding của nút */
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #0056b3; /* Hiệu ứng hover cho nút */
+        }
+    }
+
+    // Danh sách dịch vụ
+    .ant-list-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    // Mỗi mục dịch vụ
+    .ant-list-item {
+        flex: 1 1 300px; /* Chiều rộng tối thiểu cho mỗi item */
+        margin-bottom: 40px !important;
+        padding: 0 5px !important;
+    }
+
+    .ant-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .ant-card-meta-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .ant-card-meta-description {
+            font-size: 1rem;
+            color: #666;
+            height: 230px;
+        }
+
+        .ant-card-cover img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    // Xử lý khi đang loading
+    .ant-spin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+
+    // Media Query cho màn hình nhỏ
+    @media (max-width: 768px) {
+        padding: 2rem 3rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .ant-list-items {
+            flex-direction: column;
+        }
+
+        .ant-card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .ant-input-search {
+            max-width: 300px;
+        }
+    }
+}

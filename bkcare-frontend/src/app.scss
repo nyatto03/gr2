@@ -1,0 +1,17 @@
+/* index.css hoặc App.css */
+* {
+    font-family: "Montserrat", sans-serif !important;
+    // font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+
+    /* Custom error message style */
+    .ant-form-item-explain-error {
+        font-size: 14px !important;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+    .ant-form-item-required {
+        font-size: 16px !important;
+    }
+}
