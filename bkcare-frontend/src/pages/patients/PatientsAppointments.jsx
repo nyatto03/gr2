@@ -98,12 +98,21 @@ const PatientsAppointments = () => {
             dataIndex: "status",
             key: "status",
             render: (status) => {
-                const color =
-                    status === "pending"
-                        ? "orange"
-                        : status === "confirmed"
-                        ? "green"
-                        : "red";
+                let color;
+                switch (status) {
+                    case "pending":
+                        color = "orange";
+                        break;
+                    case "confirmed":
+                        color = "green";
+                        break;
+                    case "completed":
+                        color = "blue";
+                        break;
+                    default:
+                        color = "red";
+                }
+
                 return <Tag color={color}>{status.toUpperCase()}</Tag>;
             },
         },
@@ -128,7 +137,9 @@ const PatientsAppointments = () => {
                         <Button
                             style={{ marginLeft: 8 }}
                             danger
-                            onClick={() => cancelAppointment(record._id, record.time_slot)}
+                            onClick={() =>
+                                cancelAppointment(record._id, record.time_slot)
+                            }
                         >
                             Hủy
                         </Button>
@@ -159,6 +170,7 @@ const PatientsAppointments = () => {
                 visible={isModalVisible}
                 onCancel={handleCloseModal}
                 footer={null}
+                width={800}
             >
                 {selectedAppointment && (
                     <div>
@@ -194,7 +206,10 @@ const PatientsAppointments = () => {
                                 "Chưa có dịch vụ"}
                         </p>
                         <p>
-                            <strong>Mô tả dịch vụ:</strong>{" "}
+                            <strong>Mô tả dịch vụ:</strong>
+                            {""}
+                        </p>
+                        <p>
                             {selectedAppointment.service_id.description ||
                                 "Không có mô tả"}
                         </p>

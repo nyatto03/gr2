@@ -317,7 +317,7 @@ const ServiceDetail = () => {
                     format="YYYY-MM-DD"
                 />
 
-                <p>Nếu bạn muốn đặt lịch khám, nhấn Đặt lịch.</p>
+                <p>Nếu bạn muốn đặt lịch khám, nhấn OK.</p>
             </Modal>
         </div>
     );

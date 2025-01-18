@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table, Tag, Button, Modal, Input, Select } from "antd"; // Thêm Modal, Input và Select từ Ant Design
+import { Table, Tag, Button, Modal, Input, Select, notification } from "antd"; // Thêm Modal, Input và Select từ Ant Design
 import apiClient from "../../services/axiosConfig";
 import "./doctor.scss";
 
@@ -68,7 +68,10 @@ const DoctorDashboard = () => {
                 `/appointments/${selectedAppointment._id}`,
                 { status, result }
             );
-            alert(response.data.message);
+            notification.success({
+                message: "Cập nhật thành công",
+                description: response.data.message,
+            });
             // Cập nhật lại danh sách cuộc hẹn sau khi cập nhật
             setAppointments((prevAppointments) =>
                 prevAppointments.map((appointment) =>
@@ -80,7 +83,10 @@ const DoctorDashboard = () => {
             handleCloseModal();
         } catch (error) {
             console.error(error);
-            alert("Cập nhật không thành công!");
+            notification.error({
+                message: "Cập nhật thất bại",
+                description: "Cập nhật không thành công!",
+            });
         }
     };
 
@@ -208,7 +214,7 @@ const DoctorDashboard = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{ marginBottom: "40px", width: "500px", height: "50px" }}
                 enterButton="Tìm kiếm"
-                 size="large"
+                size="large"
             />
 
             <Table
@@ -278,6 +284,7 @@ const DoctorDashboard = () => {
                 onCancel={handleCloseModal}
                 footer={null}
                 className="appointment-modal"
+                width={800} // Bạn có thể điều chỉnh độ rộng của modal ở đây
             >
                 {selectedAppointment && (
                     <div>
@@ -298,12 +305,36 @@ const DoctorDashboard = () => {
                         </p>
                         <p>
                             <strong>Bệnh nhân:</strong>{" "}
-                            {selectedAppointment.patient_id?.name || "Chưa có thông tin"}
+                            {selectedAppointment.patient_id?.name ||
+                                "Chưa có thông tin"}
                         </p>
                         <p>
                             <strong>Số điện thoại:</strong>{" "}
                             {selectedAppointment.patient_id?.phone ||
                                 "Chưa có thông tin"}
+                        </p>
+                        <p>
+                            <strong>Địa chỉ:</strong>{" "}
+                            {selectedAppointment.patient_id?.address ||
+                                "Chưa có thông tin"}
+                        </p>
+                        <p>
+                            <strong>Giới tính:</strong>{" "}
+                            {selectedAppointment.patient_id?.gender === "female"
+                                ? "Nữ"
+                                : selectedAppointment.patient_id?.gender ===
+                                  "male"
+                                ? "Nam"
+                                : "Chưa có thông tin"}
+                        </p>
+
+                        <p>
+                            <strong>Ngày sinh:</strong>{" "}
+                            {selectedAppointment.patient_id?.birthDate
+                                ? new Date(
+                                      selectedAppointment.patient_id.birthDate
+                                  ).toLocaleDateString()
+                                : "Chưa có thông tin"}
                         </p>
                         <p>
                             <strong>Dịch vụ:</strong>{" "}
@@ -312,7 +343,9 @@ const DoctorDashboard = () => {
                         </p>
                         <p>
                             <strong>Ngày:</strong>{" "}
-                            {new Date(selectedAppointment.date).toLocaleDateString()}
+                            {new Date(
+                                selectedAppointment.date
+                            ).toLocaleDateString()}
                         </p>
                         <p>
                             <strong>Giờ:</strong>{" "}
@@ -326,9 +359,11 @@ const DoctorDashboard = () => {
                                 color={
                                     selectedAppointment.status === "pending"
                                         ? "orange"
-                                        : selectedAppointment.status === "confirmed"
+                                        : selectedAppointment.status ===
+                                          "confirmed"
                                         ? "green"
-                                        : selectedAppointment.status === "canceled"
+                                        : selectedAppointment.status ===
+                                          "canceled"
                                         ? "red"
                                         : "blue"
                                 }
@@ -336,6 +371,10 @@ const DoctorDashboard = () => {
                                 {selectedAppointment.status?.toUpperCase() ||
                                     "Chưa xác định"}
                             </Tag>
+                        </p>
+                        <p>
+                            <strong>Kết quả:</strong>{" "}
+                            {selectedAppointment.result || "Chưa có kết quả"}
                         </p>
                     </div>
                 )}
