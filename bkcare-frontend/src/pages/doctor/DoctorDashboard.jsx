@@ -284,7 +284,7 @@ const DoctorDashboard = () => {
                         <p>
                             {selectedAppointment.patient_id?.image ? (
                                 <img
-                                    src={`http://localhost:5000${selectedAppointment.patient_id.image}`}
+                                    src={`https://gr2-kaqd.onrender.com${selectedAppointment.patient_id.image}`}
                                     alt="Ảnh bệnh nhân"
                                     style={{
                                         width: "100px",

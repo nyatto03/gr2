@@ -15,7 +15,7 @@ const DoctorDetail = () => {
             try {
                 setLoading(true);
                 const response = await fetch(
-                    `http://localhost:5000/api/doctors/${id}`
+                    `https://gr2-kaqd.onrender.com/api/doctors/${id}`
                 );
                 if (!response.ok) {
                     throw new Error("Không thể lấy thông tin bác sĩ.");
@@ -62,7 +62,7 @@ const DoctorDetail = () => {
                 <div className="doctor-image">
                     <img
                         alt={doctor.name}
-                        src={`http://localhost:5000${doctor.image}`}
+                        src={`https://gr2-kaqd.onrender.com${doctor.image}`}
                         style={{
                             objectFit: "cover",
                             height: "300px", // Chiều cao ảnh

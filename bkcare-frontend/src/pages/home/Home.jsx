@@ -203,7 +203,7 @@ const Home = () => {
                                         cover={
                                             <img
                                                 alt={service.name}
-                                                src={`http://localhost:5000${service.image}`}
+                                                src={`https://gr2-kaqd.onrender.com${service.image}`}
                                                 style={{
                                                     height: 200,
                                                     objectFit: "cover",
@@ -261,7 +261,7 @@ const Home = () => {
                                     cover={
                                         <img
                                             alt={service.name}
-                                            src={`http://localhost:5000${service.image}`}
+                                            src={`https://gr2-kaqd.onrender.com${service.image}`}
                                         />
                                     }
                                 >
@@ -327,7 +327,7 @@ const Home = () => {
                                     cover={
                                         <img
                                             alt={doctor.name}
-                                            src={`http://localhost:5000${doctor.image}`}
+                                            src={`https://gr2-kaqd.onrender.com${doctor.image}`}
                                             className="doctor-image"
                                         />
                                     }

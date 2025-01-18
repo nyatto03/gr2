@@ -97,7 +97,7 @@ const DoctorsList = () => {
                             cover={
                                 <img
                                     alt={doctor.name}
-                                    src={`http://localhost:5000${doctor.image}`} // Thay đường dẫn hình ảnh phù hợp
+                                    src={`https://gr2-kaqd.onrender.com${doctor.image}`} // Thay đường dẫn hình ảnh phù hợp
                                     style={{ height: 350, objectFit: "cover" }}
                                 />
                             }

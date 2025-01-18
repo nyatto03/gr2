@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
-// const API_BASE_URL = 'https://web-it4409-gr22-bkbk.onrender.com/api';
+// const API_BASE_URL = 'https://gr2-kaqd.onrender.com/api';
+const API_BASE_URL = 'https://gr2-kaqd.onrender.com/api';
 
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
